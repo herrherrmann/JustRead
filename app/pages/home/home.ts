@@ -14,12 +14,21 @@ export class HomePage {
   searchTerm: string;
   titles: any;
   searching: boolean;
+  page = 1;
 
   constructor(public http: Http) {
     this.search();
     // Globalization.getLocaleName()
     //   .then(locale => this.locale = locale)
     //   .catch(error => {});
+  }
+
+  changePage(offset) {
+    this.page += offset;
+    if (this.page === 0) {
+      this.page = 1;
+    }
+    this.search();
   }
 
   search() {
@@ -29,7 +38,7 @@ export class HomePage {
     this.http
       .post(`https://api.justwatch.com/titles/${locale}/popular`, {
         content_types: ['show', 'movie'],
-        page: 1,
+        page: this.page,
         page_size: 20,
         query: this.searchTerm,
       })
@@ -40,6 +49,7 @@ export class HomePage {
   }
 
   resetSearch() {
+    this.page = 1;
     this.searchTerm = '';
     this.search();
   }

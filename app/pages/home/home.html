@@ -42,4 +42,15 @@
     </result>
   </div>
 
+  <div class="home__pagination" *ngIf="titles.length && !searching">
+    <button type="button" class="home__pagination__button home__pagination__button--left" [disabled]="page === 1" (click)="changePage(-1)">
+      <!--<ion-icon name="arrow-back"></ion-icon>-->
+      Previous Page
+    </button>
+    <button type="button" class="home__pagination__button home__pagination__button--right" (click)="changePage(1)">
+      Next Page
+      <!--<ion-icon name="arrow-forward"></ion-icon>-->
+    </button>
+  </div>
+
 </ion-content>

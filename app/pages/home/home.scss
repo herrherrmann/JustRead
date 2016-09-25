@@ -7,7 +7,9 @@
     }
     &__clear {
       position: absolute;
-      right: 0.5em;
+      top: 0.1em;
+      right: 0;
+      padding: 0.2em 0.5em 0.1em;
     }
     &__input {
       width: 100%;
@@ -16,15 +18,38 @@
       border-color: #000;
       float: left;
       margin-bottom: 12px;
-      &:active, &:focus {
+      &:active,
+      &:focus {
         border-color: blue;
       }
     }
     &__btn {
+      background: none;
+      font-size: 1em;
       display: block;
       float: right;
-      width: 10%;
+      width: 13%;
+      height: 1.5em;
+    }
+  }
+  &__pagination {
+    margin-top: 12px;
+    border-top: 1px solid #000;
+    display: flex;
+    &__button {
+      background: none;
+      border: none;
+      font-size: 1em;
       height: 2.4em;
+      flex-grow: 1;
+      &--left {
+        padding-left: 0;
+        text-align: left;
+      }
+      &--right {
+        padding-right: 0;
+        text-align: right;
+      }
     }
   }
   // .title-list {}
