@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <span *ngIf="!loading">
+        {{title.title}}
+      </span>
+      <span *ngIf="loading">
+        Loading&hellip;
+      </span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="title-details" *ngIf="!loading">
+
+  <h1>{{title.title}}</h1>
+
+  <h4>Release</h4>
+  <p class="title-details__detail">
+    {{title.original_release_year}}
+  </p>
+
+  <h4>Synopsis</h4>
+  <p class="title-details__detail">
+    {{title.short_description}}
+  </p>
+
+  <a href="https://justwatch.com/{{title.full_path}}" target="_blank">
+    Open on JustWatch
+  </a>
+
+</ion-content>

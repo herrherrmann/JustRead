@@ -1,0 +1,8 @@
+.title-list {
+  &__title {
+    padding: 4px 0;
+    &:focus {
+      color: lighten(#000, 40%);
+    }
+  }
+}

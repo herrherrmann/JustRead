@@ -1,14 +1,23 @@
 // http://ionicframework.com/docs/v2/theming/
-
-
-// App Shared Imports
-// --------------------------------------------------
-// These are the imports which make up the design of this app.
-// By default each design mode includes these shared imports.
-// App Shared Sass variables belong in app.variables.scss.
-
-@import "../pages/about/about";
-
-@import "../pages/contact/contact";
-
+@import "../pages/details/details.scss";
 @import "../pages/home/home";
+@import "../pages/home/title-result/title-result";
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../fonts/Inconsolata.eot');
+    src: url('../fonts/Inconsolata.eot') format('embedded-opentype'),
+         url('../fonts/Inconsolata.woff2') format('woff2'),
+         url('../fonts/Inconsolata.woff') format('woff'),
+         url('../fonts/Inconsolata.ttf') format('truetype'),
+         url('../fonts/Inconsolata.svg#Inconsolata') format('svg');
+}
+
+html, body {
+  font-family: 'Inconsolata';
+}
+
+ion-content {
+  font-size: 18px;
+  line-height: 1.2;
+}

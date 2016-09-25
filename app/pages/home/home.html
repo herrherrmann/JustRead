@@ -1,17 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>JustRead</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>app/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <form name="searchForm" class="home__search">
+    <div class="home__search__box">
+      <input
+        type="search"
+        class="home__search__input"
+        [(ngModel)]="searchTerm"
+        name="searchTerm">
+      <span
+        *ngIf="searchTerm"
+        class="home__search__clear"
+        (click)="resetSearch()">
+        <ion-icon name="close"></ion-icon>
+      </span>
+    </div>
+    <button
+      type="submit"
+      class="home__search__btn"
+      (click)="search()"
+      [disabled]="!searchTerm">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </form>
+  <div style="clear: both;"></div>
+
+  <div *ngIf="!titles.length && !searching" class="text-muted">
+    No titles found.
+  </div>
+  <div *ngIf="searching" class="text-muted">
+    Searching&hellip;
+  </div>
+  <div class="title-list" *ngFor="let title of titles">
+    <result
+      [titleObject]="title">
+    </result>
+  </div>
+
 </ion-content>

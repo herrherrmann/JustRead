@@ -1,2 +1,31 @@
 .home {
+  &__search {
+    &__box {
+      display: block;
+      width: 85%;
+      position: relative;
+    }
+    &__clear {
+      position: absolute;
+      right: 0.5em;
+    }
+    &__input {
+      width: 100%;
+      font-size: 1.2em;
+      border-width: 0 0 1px 0;
+      border-color: #000;
+      float: left;
+      margin-bottom: 12px;
+      &:active, &:focus {
+        border-color: blue;
+      }
+    }
+    &__btn {
+      display: block;
+      float: right;
+      width: 10%;
+      height: 2.4em;
+    }
+  }
+  // .title-list {}
 }
