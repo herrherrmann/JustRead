@@ -12,7 +12,6 @@ export class TitleResult {
   constructor(public navCtrl: NavController) {}
 
   open() {
-    console.log('opening title...');
     this.navCtrl.push(DetailsPage, {
       object_type: this.titleObject.object_type,
       id: this.titleObject.id

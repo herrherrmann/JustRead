@@ -3,7 +3,7 @@
     [name]="titleObject.object_type === 'movie' ? 'film' : 'desktop'"
     class="title-list__title__icon">
   </ion-icon>-->
-  {{titleObject.object_type === 'movie' ? '📽' : '📺'}}
+  {{titleObject.object_type === 'movie' ? '🎥' : '📺'}}
   {{titleObject.title}}
   <small class="text-muted" *ngIf="titleObject.original_release_year">
     ({{titleObject.original_release_year}})
