@@ -2,37 +2,49 @@
 
   <ion-navbar>
     <ion-title>
-      <span *ngIf="!loading">
-        {{title.title}}
-      </span>
-      <span *ngIf="loading">
-        Loading&hellip;
-      </span>
+      {{loading ? 'Loading...' : title.title}}
     </ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding class="title-details">
 
   <h1>{{title.title || '...'}}</h1>
 
-  <h4>Release</h4>
-  <p class="title-details__detail">
+  <h4>
+    Release
+  </h4>
+  <p>
     {{title.original_release_year || '...'}}
   </p>
 
-  <h4 *ngIf="title.object_type === 'movie'">Run Time</h4>
-  <p class="title-details__detail" *ngIf="title.object_type === 'movie'">
-    {{runtime.hours}}h
-    {{runtime.mins}}m
+  <h4 *ngIf="title.object_type === 'movie'">
+    Run Time
+  </h4>
+  <p *ngIf="title.object_type === 'movie'">
+    {{(title.runtime / 60) | number:'1.0-0'}}h
+    {{title.runtime % 60}}min
   </p>
 
-  <h4>Synopsis</h4>
-  <p class="title-details__detail">
+  <h4>
+    Synopsis
+  </h4>
+  <p>
     {{title.short_description || '...'}}
   </p>
+
+  <h2 *ngIf="title.object_type === 'show' && title.seasons.length">
+    {{title.seasons.length}} Seasons
+  </h2>
+  <div *ngFor="let season of title.seasons; let i = index">
+    <h4>
+      Season {{i + 1}}
+    </h4>
+    <p>
+      {{season.short_description || '(No description.)'}}
+    </p>
+  </div>
 
   <a href="https://justwatch.com/{{title.full_path}}" target="_blank" *ngIf="title.full_path">
     Open on JustWatch

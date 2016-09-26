@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { DetailsPage } from '../../../pages/details/details';
+import { DetailsPage } from '../../details/details';
 
 @Component({
   selector: 'result',
-  templateUrl: 'build/pages/home/title-result/title-result.html'
+  templateUrl: 'build/pages/list/title-result/title-result.html'
 })
 export class TitleResult {
   @Input() titleObject: any;

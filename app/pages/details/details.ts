@@ -2,40 +2,34 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 
-
-/*
-  Generated class for the DetailsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/details/details.html',
 })
 export class DetailsPage {
-  title: any;
-  searching: boolean;
-  runtime: any;
+  private title: any;
+  private loading: boolean;
+  private runtime: any;
+  // static for now.
+  private locale = 'en_US';
 
-  constructor(private navCtrl: NavController, navParams: NavParams, http: Http) {
+  constructor(private navCtrl: NavController, private navParams: NavParams, private http: Http) {
+    this.loadDetails();
+  }
+
+  loadDetails() {
+    const requestParams = this.navParams.data;
     this.title = {};
     this.runtime = {};
-    this.searching = true;
-    // static for now.
-    const locale = 'en_US';
-    const requestParams = navParams.data;
-    // Load details!
-    // GET https://api.justwatch.com/titles/movie/122347/locale/de_DE
+    this.loading = true;
     // https://angular.io/docs/ts/latest/api/http/index/Http-class.html
-    http.get(`https://api.justwatch.com/titles/${requestParams.object_type}/${requestParams.id}/locale/${locale}`)
+    this.http.get(`https://api.justwatch.com/titles/${requestParams.object_type}/${requestParams.id}/locale/${this.locale}`)
       .subscribe(titleDetails => {
-        console.log('titleDetails.json(): ', titleDetails.json());
         this.title = titleDetails.json();
         if (this.title.runtime) {
           this.runtime.hours = Math.floor(this.title.runtime / 60);
           this.runtime.mins = this.title.runtime % 60;
         }
-        this.searching = false;
+        this.loading = false;
       });
   }
 

@@ -1,6 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>JustRead</ion-title>
+    <ion-title>
+      JustRead
+    </ion-title>
+    <ion-icon
+      name="more"
+      (click)="showPopover($event)"
+      class="home__popover-btn">
+    </ion-icon>
   </ion-navbar>
 </ion-header>
 
@@ -44,12 +51,10 @@
 
   <div class="home__pagination" *ngIf="titles.length && !searching">
     <button type="button" class="home__pagination__button home__pagination__button--left" [disabled]="page === 1" (click)="changePage(-1)">
-      <!--<ion-icon name="arrow-back"></ion-icon>-->
       Previous Page
     </button>
     <button type="button" class="home__pagination__button home__pagination__button--right" (click)="changePage(1)">
       Next Page
-      <!--<ion-icon name="arrow-forward"></ion-icon>-->
     </button>
   </div>
 

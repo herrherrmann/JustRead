@@ -1,4 +1,10 @@
 .home {
+  &__popover-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.9em 1.5em;
+  }
   &__search {
     &__box {
       display: block;
@@ -9,18 +15,19 @@
       position: absolute;
       top: 0.05em;
       right: 0;
-      padding: 0.2em 0.5em 0.1em;
+      padding: 0.2em 0.5em 0em;
+      background-color: $color-bg;
     }
     &__input {
       width: 100%;
       font-size: 1.2em;
       border-width: 0 0 1px 0;
-      border-color: #000;
+      border-color: $color-text;
       float: left;
       margin-bottom: 12px;
       &:active,
       &:focus {
-        border-color: blue;
+        border-color: $color-jw-gold;
       }
     }
     &__btn {
@@ -28,13 +35,14 @@
       font-size: 1em;
       display: block;
       float: right;
-      width: 13%;
+      padding: 0 0.5em 0 1em;
+      box-sizing: content-box;
       height: 1.5em;
     }
   }
   &__pagination {
     margin-top: 12px;
-    border-top: 1px solid #000;
+    border-top: 1px solid $color-text;
     display: flex;
     &__button {
       background: none;
