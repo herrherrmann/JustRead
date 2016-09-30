@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Platform, ionicBootstrap } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { ListPage } from './pages/list/list';
+import { ListPage } from '../pages/list/list';
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
@@ -20,5 +20,3 @@ export class MyApp {
     });
   }
 }
-
-ionicBootstrap(MyApp);

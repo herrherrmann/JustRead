@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 @Component({
-  templateUrl: 'build/pages/details/details.html',
+  templateUrl: 'details.html',
 })
 export class DetailsPage {
   private title: any;

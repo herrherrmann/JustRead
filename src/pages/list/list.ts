@@ -2,13 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Http } from '@angular/http';
 import { NavController, PopoverController } from 'ionic-angular';
 import { Globalization } from 'ionic-native';
-import { TitleResult } from './title-result/title-result';
 import { PopoverPage } from './popover/popover';
 
 
 @Component({
-  templateUrl: 'build/pages/list/list.html',
-  directives: [TitleResult],
+  templateUrl: 'list.html',
 })
 export class ListPage {
   locale: string;

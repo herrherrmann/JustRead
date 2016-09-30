@@ -4,7 +4,7 @@ import { DetailsPage } from '../../details/details';
 
 @Component({
   selector: 'result',
-  templateUrl: 'build/pages/list/title-result/title-result.html'
+  templateUrl: 'title-result.html'
 })
 export class TitleResult {
   @Input() titleObject: any;
