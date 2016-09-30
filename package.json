@@ -1,7 +1,7 @@
 {
   "name": "justread",
   "version": "0.0.1",
-  "description": "justRead: An Ionic project",
+  "description": "JustRead: An Ionic project",
   "dependencies": {
     "@angular/common": "2.0.1",
     "@angular/compiler": "2.0.1",
@@ -13,7 +13,7 @@
     "es6-shim": "0.35.1",
     "ionic-angular": "2.0.0-rc.0",
     "ionicons": "^3.0.0",
-    "@ionic/storage": "^1.0.3",
+    "@ionic/storage": "^1.1.2",
     "ionic-native": "^2.0.3",
     "reflect-metadata": "0.1.8",
     "rxjs": "5.0.0-beta.12",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "del": "2.2.2",
     "gulp": "3.9.1",
-    "gulp-watch": "4.3.5",
+    "gulp-watch": "4.3.10",
     "@ionic/app-scripts": "^0.0.23",
     "typescript": "^2.0.3",
     "tslint-ionic-rules": "0.0.5",

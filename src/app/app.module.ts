@@ -3,10 +3,14 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
 import { TitleResult } from '../pages/list/title-result/title-result';
+import { DetailsPage } from '../pages/details/details';
+import { AboutPage } from '../pages/about/about';
 
 @NgModule({
   declarations: [
     MyApp,
+    AboutPage,
+    DetailsPage,
     ListPage,
     TitleResult,
   ],
@@ -17,7 +21,8 @@ import { TitleResult } from '../pages/list/title-result/title-result';
   entryComponents: [
     MyApp,
     ListPage,
+    TitleResult,
   ],
-  providers: []
+  providers: [MyApp]
 })
-export class AppModule {}
+export class AppModule { }

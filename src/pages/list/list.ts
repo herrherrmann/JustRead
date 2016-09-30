@@ -1,19 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { NavController, PopoverController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
 import { Globalization } from 'ionic-native';
 import { PopoverPage } from './popover/popover';
-
 
 @Component({
   templateUrl: 'list.html',
 })
 export class ListPage {
   locale: string;
-  searchTerm: string;
-  titles: any;
-  searching: boolean;
-  page = 1;
+  public searchTerm: string;
+  public titles: any;
+  public searching: boolean;
+  public page = 1;
   // private popoverCtrl: PopoverCtrl;
 
   constructor(public http: Http, private popoverCtrl: PopoverController) {
