@@ -11,6 +11,8 @@
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 $text-color:        #000;
 $background-color:  #fff;
+$color-headline: $text-color;
+$color-jw-gold: #fbc500;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -39,7 +41,6 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -50,11 +51,7 @@ $colors: (
 // @import "ionic.md";
 // @import "ionic.wp";
 
-
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
 
-$color-text: #000;
-$color-bg: #fff;
-$color-headline: $color-text;
-$color-jw-gold: #fbc500;
+@import "overrides";

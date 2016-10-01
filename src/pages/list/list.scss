@@ -16,13 +16,13 @@
       top: 0.05em;
       right: 0;
       padding: 0.2em 0.5em 0em;
-      background-color: $color-bg;
+      background-color: $background-color;
     }
     &__input {
       width: 100%;
       font-size: 1.2em;
       border-width: 0 0 1px 0;
-      border-color: $color-text;
+      border-color: $text-color;
       float: left;
       margin-bottom: 12px;
       &:active,
@@ -42,7 +42,7 @@
   }
   &__pagination {
     margin-top: 12px;
-    border-top: 1px solid $color-text;
+    border-top: 1px solid $text-color;
     display: flex;
     &__button {
       background: none;

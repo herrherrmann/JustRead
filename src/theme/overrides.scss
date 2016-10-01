@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../assets/fonts/Inconsolata.eot');
+    src: url('../assets/fonts/Inconsolata.eot') format('embedded-opentype'),
+         url('../assets/fonts/Inconsolata.woff2') format('woff2'),
+         url('../assets/fonts/Inconsolata.woff') format('woff'),
+         url('../assets/fonts/Inconsolata.ttf') format('truetype'),
+         url('../assets/fonts/Inconsolata.svg#Inconsolata') format('svg');
+}
+
+html, body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: 'Inconsolata';
+}
+
+ion-header, ion-navbar {
+  font-size: 18px;
+}
+ion-content {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+h4 {
+  color: $color-headline;
+  & + p {
+    margin-top: 0;
+  }
+}
