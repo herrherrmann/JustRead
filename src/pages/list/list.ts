@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { PopoverController } from 'ionic-angular';
 import { Globalization } from 'ionic-native';
@@ -7,15 +7,16 @@ import { PopoverPage } from './popover/popover';
 @Component({
   templateUrl: 'list.html',
 })
-export class ListPage {
-  locale: string;
-  public searchTerm: string;
-  public titles: any;
-  public searching: boolean;
-  public page = 1;
-  // private popoverCtrl: PopoverCtrl;
+export class ListPage implements OnInit {
+  private locale: string;
+  private titles: Object[];
+  private searchTerm: string;
+  private searching: boolean;
+  private page = 1;
 
-  constructor(public http: Http, private popoverCtrl: PopoverController) {
+  constructor(private http: Http, public popoverCtrl: PopoverController) {}
+
+  ngOnInit(): void {
     this.search();
     // Globalization.getLocaleName()
     //   .then(locale => this.locale = locale)
@@ -31,11 +32,11 @@ export class ListPage {
   }
 
   search() {
-    const locale = this.locale || 'en_US';
+    const queryLocale = this.locale || 'en_US';
     this.titles = [];
     this.searching = true;
     this.http
-      .post(`https://api.justwatch.com/titles/${locale}/popular`, {
+      .post(`https://api.justwatch.com/titles/${queryLocale}/popular`, {
         content_types: ['show', 'movie'],
         page: this.page,
         page_size: 14,
@@ -57,9 +58,9 @@ export class ListPage {
   }
 
   showPopover(event) {
-    let popover = this.popoverCtrl.create(PopoverPage);
+    const popover = this.popoverCtrl.create(PopoverPage);
     popover.present({
-      ev: event
+      ev: event,
     });
   }
 }

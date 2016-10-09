@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 @Component({
   templateUrl: 'details.html',
 })
-export class DetailsPage {
+export class DetailsPage implements OnInit {
   private title: any;
   private loading: boolean;
   private runtime: any;
   // static for now.
-  private locale = 'en_US';
+  private locale: string = 'en_US';
 
-  constructor(private navCtrl: NavController, private navParams: NavParams, private http: Http) {
+  constructor(private navCtrl: NavController, private navParams: NavParams, private http: Http) { }
+
+  ngOnInit(): void {
     this.loadDetails();
   }
 

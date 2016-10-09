@@ -3,18 +3,13 @@ import { ViewController, NavController } from 'ionic-angular';
 import { AboutPage } from '../../about/about';
 
 @Component({
-  template: `
-    <ion-list>
-      <button ion-item (click)="goTo(aboutPage)">About</button>
-    </ion-list>
-  `
+  templateUrl: 'popover.html',
 })
-
 export class PopoverPage {
-  private aboutPage: any;
+  public aboutPage: any = AboutPage;
 
   constructor(private viewCtrl: ViewController, private navCtrl: NavController) {
-    this.aboutPage = AboutPage;
+    // this.aboutPage = AboutPage;
   }
 
   close() {
