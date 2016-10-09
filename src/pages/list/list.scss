@@ -16,7 +16,7 @@
       top: 0.05em;
       right: 0;
       padding: 0.2em 0.5em 0em;
-      background-color: $background-color;
+      // background-color: $background-color;
     }
     &__input {
       width: 100%;
@@ -24,7 +24,7 @@
       border-width: 0 0 1px 0;
       border-color: $text-color;
       float: left;
-      margin-bottom: 12px;
+      margin-bottom: 0.5em;
       &:active,
       &:focus {
         border-color: $color-jw-gold;

@@ -8,17 +8,16 @@
          url('../assets/fonts/Inconsolata.svg#Inconsolata') format('svg');
 }
 
-html, body {
-  background-color: $background-color;
-  color: $text-color;
-  font-family: 'Inconsolata';
-}
+$font-family-base: 'Inconsolata';
+$font-family-ios-base: 'Inconsolata';
+$font-family-md-base: 'Inconsolata';
+$font-family-wp-base: 'Inconsolata';
+$font-size-base: 18px;
 
 ion-header, ion-navbar {
   font-size: 18px;
 }
 ion-content {
-  font-size: 18px;
   line-height: 1.2;
 }
 
