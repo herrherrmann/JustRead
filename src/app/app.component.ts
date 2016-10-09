@@ -2,14 +2,18 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { ListPage } from '../pages/list/list';
+import { LocaleService } from './locale.service';
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  providers: [LocaleService],
 })
 export class MyApp {
   public rootPage: any;
 
-  constructor(private platform: Platform) {
+  constructor(
+    private platform: Platform,
+  ) {
     this.rootPage = ListPage;
 
     platform.ready().then(() => {
