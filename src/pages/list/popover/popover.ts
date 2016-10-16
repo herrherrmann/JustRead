@@ -8,13 +8,10 @@ import { AboutPage } from '../../about/about';
 export class PopoverPage {
   public aboutPage: any = AboutPage;
 
-  constructor(private viewCtrl: ViewController, private navCtrl: NavController) {
-    // this.aboutPage = AboutPage;
-  }
-
-  close() {
-    this.viewCtrl.dismiss();
-  }
+  constructor(
+    private viewCtrl: ViewController,
+    private navCtrl: NavController
+  ) {}
 
   goTo(page) {
     this.viewCtrl.dismiss();

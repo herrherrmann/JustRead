@@ -3,11 +3,11 @@
     <ion-title>
       JustRead
     </ion-title>
-    <ion-icon
-      name="more"
-      (click)="showPopover($event)"
-      class="home__popover-btn">
-    </ion-icon>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
