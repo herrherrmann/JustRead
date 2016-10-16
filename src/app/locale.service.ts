@@ -13,7 +13,7 @@ export class LocaleService {
   };
 
   getLocale(): string {
-    const language = window.navigator.languages[0];
+    const language = window.navigator.language;
     return this.LOCALE_MAPPING[language] ? this.LOCALE_MAPPING[language] : this.LOCALE_MAPPING.default;
   }
 }
