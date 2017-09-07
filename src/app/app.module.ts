@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { LocaleService } from './locale.service';
 import { AboutPage } from '../pages/about/about';
 import { DetailsPage } from '../pages/details/details';
 import { ListPage } from '../pages/list/list';
@@ -27,6 +28,9 @@ import { PopoverPage } from '../pages/list/popover/popover';
     PopoverPage,
     TitleResult,
   ],
-  providers: [MyApp]
+  providers: [
+    MyApp,
+    LocaleService,
+  ]
 })
 export class AppModule { }
